@@ -1,0 +1,159 @@
+Initialized native services in: /Users/RU1129/.gradle/native
+Initialized jansi services in: /Users/RU1129/.gradle/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle build daemon'. Working directory: /Users/RU1129/.gradle/daemon/8.14.3 Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -cp /Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/gradle-daemon-main-8.14.3.jar -javaagent:/Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/agents/gradle-instrumentation-agent-8.14.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.3
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.447 secs.
+The client will now receive all logging from the daemon (pid: 48210). The daemon log file: /Users/RU1129/.gradle/daemon/8.14.3/daemon-48210.out.log
+Daemon will be stopped at the end of the build 
+Using 10 worker leases.
+Received JVM installation metadata from '/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home': {JAVA_HOME=/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home, JAVA_VERSION=21.0.8, JAVA_VENDOR=Microsoft, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.8+9-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.8+9-LTS, VM_VENDOR=Microsoft, OS_ARCH=aarch64}
+Watching the file system is configured to be enabled if available
+Now considering [/Users/RU1129/IdeaProjects/shopping_application] as hierarchies to watch
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/Users/RU1129/IdeaProjects/shopping_application/settings.gradle'.
+Projects loaded. Root project using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Included projects: [root project 'shopping_application']
+
+> Configure project :
+Evaluating root project 'shopping_application' using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Caching disabled for Groovy DSL script compilation (cp_proj) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle' using SubsetScriptTransformer.
+Resolved plugin [id: 'java']
+Resolved plugin [id: 'org.springframework.boot', version: '3.5.6']
+Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
+Applying dependency management to configuration 'annotationProcessor' in project 'shopping_application'
+Applying dependency management to configuration 'apiElements' in project 'shopping_application'
+Applying dependency management to configuration 'archives' in project 'shopping_application'
+Applying dependency management to configuration 'bootArchives' in project 'shopping_application'
+Applying dependency management to configuration 'compileClasspath' in project 'shopping_application'
+Applying dependency management to configuration 'compileOnly' in project 'shopping_application'
+Applying dependency management to configuration 'default' in project 'shopping_application'
+Applying dependency management to configuration 'developmentOnly' in project 'shopping_application'
+Applying dependency management to configuration 'implementation' in project 'shopping_application'
+Applying dependency management to configuration 'mainSourceElements' in project 'shopping_application'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'shopping_application'
+Applying dependency management to configuration 'runtimeClasspath' in project 'shopping_application'
+Applying dependency management to configuration 'runtimeElements' in project 'shopping_application'
+Applying dependency management to configuration 'runtimeOnly' in project 'shopping_application'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'shopping_application'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'shopping_application'
+Applying dependency management to configuration 'testCompileClasspath' in project 'shopping_application'
+Applying dependency management to configuration 'testCompileOnly' in project 'shopping_application'
+Applying dependency management to configuration 'testImplementation' in project 'shopping_application'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'shopping_application'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'shopping_application'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'shopping_application'
+Caching disabled for Groovy DSL script compilation (proj) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Task name matched 'clean'
+Task name matched 'test'
+Selected primary task 'clean' from project :
+Selected primary task 'test' from project :
+Starting process 'command '/usr/libexec/java_home''. Working directory: /Users/RU1129/.gradle/daemon/8.14.3 Command: /usr/libexec/java_home -V
+Successfully started process 'command '/usr/libexec/java_home''
+Starting process 'command '/Users/RU1129/Library/Java/JavaVirtualMachines/openjdk-25/Contents/Home/bin/java''. Working directory: /Users/RU1129/.gradle/.tmp/tmp-jvm2216750277636171204probe Command: /Users/RU1129/Library/Java/JavaVirtualMachines/openjdk-25/Contents/Home/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/Users/RU1129/Library/Java/JavaVirtualMachines/openjdk-25/Contents/Home/bin/java''
+Received JVM installation metadata from '/Users/RU1129/Library/Java/JavaVirtualMachines/openjdk-25/Contents/Home': {JAVA_HOME=/Users/RU1129/Library/Java/JavaVirtualMachines/openjdk-25/Contents/Home, JAVA_VERSION=25, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=25+36-3489, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25+36-3489, VM_VENDOR=Oracle Corporation, OS_ARCH=aarch64}
+Starting process 'command '/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/bin/java''. Working directory: /Users/RU1129/.gradle/.tmp/tmp-jvm12764938727080846552probe Command: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/bin/java -Xmx32m -Xms32m -cp . JavaProbe
+Successfully started process 'command '/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/bin/java''
+Received JVM installation metadata from '/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home': {JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home, JAVA_VERSION=25, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=Java(TM) SE Runtime Environment, RUNTIME_VERSION=25+37-LTS-3491, VM_NAME=Java HotSpot(TM) 64-Bit Server VM, VM_VERSION=25+37-LTS-3491, VM_VENDOR=Oracle Corporation, OS_ARCH=aarch64}
+Resolving global dependency management for project 'shopping_application'
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Tasks to be executed: [task ':clean', task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test']
+Tasks that were excluded: []
+Resolve mutations for :clean (Thread[#176,Execution worker Thread 2,5,main]) started.
+:clean (Thread[#176,Execution worker Thread 2,5,main]) started.
+destroyer locations for task group 0 (Thread[#174,included builds,5,main]) started.
+
+> Task :clean UP-TO-DATE
+Caching disabled for task ':clean' because:
+  Build cache is disabled
+Task ':clean' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :compileJava (Thread[#176,Execution worker Thread 2,5,main]) started.
+:compileJava (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :compileJava
+Custom actions are attached to task ':compileJava'.
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Task ':compileJava' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':compileJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain '/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home'.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.007 secs.
+Created classpath snapshot for incremental compilation in 0.033 secs.
+Resolve mutations for :processResources (Thread[#176,Execution worker Thread 2,5,main]) started.
+:processResources (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :processResources
+Caching disabled for task ':processResources' because:
+  Build cache is disabled
+  Not worth caching
+Task ':processResources' is not up-to-date because:
+  No history is available.
+Resolve mutations for :classes (Thread[#176,Execution worker Thread 2,5,main]) started.
+:classes (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :classes
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[#176,Execution worker Thread 2,5,main]) started.
+:compileTestJava (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :compileTestJava
+Custom actions are attached to task ':compileTestJava'.
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Task ':compileTestJava' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':compileTestJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain '/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home'.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.002 secs.
+Created classpath snapshot for incremental compilation in 0.02 secs.
+Resolve mutations for :processTestResources (Thread[#176,Execution worker Thread 2,5,main]) started.
+:processTestResources (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :processTestResources NO-SOURCE
+Skipping task ':processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :testClasses (Thread[#176,Execution worker Thread 2,5,main]) started.
+:testClasses (Thread[#176,Execution worker Thread 2,5,main]) started.
+
+> Task :testClasses
+Skipping task ':testClasses' as it has no actions.
+Resolve mutations for :test (Thread[#176,Execution worker Thread 2,5,main]) started.
+:test (Thread[#176,Execution worker Thread 2,5,main]) started.
+Gradle Test Executor 1 started executing tests.
+Gradle Test Executor 1 finished executing tests.
+
+> Task :test
+Caching disabled for task ':test' because:
+  Build cache is disabled
+Task ':test' is not up-to-date because:
+  No history is available.
+Starting process 'Gradle Test Executor 1'. Working directory: /Users/RU1129/IdeaProjects/shopping_application Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java -Dorg.gradle.internal.worker.tmpdir=/Users/RU1129/IdeaProjects/shopping_application/build/tmp/test/work @/Users/RU1129/.gradle/.tmp/gradle-worker-classpath330831253297920360txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+Finished generating test XML results (0.001 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/test-results/test
+Generating HTML test report...
+Finished generating test html results (0.005 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/reports/tests/test
+
+BUILD SUCCESSFUL in 4s
+5 actionable tasks: 4 executed, 1 up-to-date
+Watched directory hierarchies: [/Users/RU1129/IdeaProjects/shopping_application]
