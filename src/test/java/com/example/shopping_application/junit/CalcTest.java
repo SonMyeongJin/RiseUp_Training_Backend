@@ -8,5 +8,8 @@ class CalcTest {
 
         assertEquals(4, new Calc().add(2, 2));
         assertEquals(6, new Calc().add(4, 2));
+
+        assertThrows(NumberFormatException.class, () -> new Calc().add(-100, 10),
+                "음수는 나오지 않습니다");
     }
 }
