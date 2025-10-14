@@ -10,19 +10,5 @@ public class Product {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public Integer getAmount() {
-        return amount;
-    }
+    // ProdcutDTO 만들었으므로 getter 삭제
 }

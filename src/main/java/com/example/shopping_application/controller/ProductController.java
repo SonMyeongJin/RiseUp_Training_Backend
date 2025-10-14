@@ -1,6 +1,7 @@
 package com.example.shopping_application.controller;
 
 import com.example.shopping_application.domain.Product;
+import com.example.shopping_application.dto.ProductDto;
 import com.example.shopping_application.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,9 +21,9 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public Product creatProduct(@RequestBody Product product) {
+    public ProductDto creatProduct(@RequestBody ProductDto productDto) {
         // 프로덕트를 생성하고 리스트에 넣는 작업
-        return product;
+        return productService.add(productDto);
     }
 
 }
