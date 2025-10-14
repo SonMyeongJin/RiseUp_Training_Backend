@@ -18,4 +18,12 @@ class OlympicTest {
         assertTrue(new Olympic().isSummerOlympicYear(1896),"1896년은 올림픽 개최년도입니다");
     }
 
+    @Test
+    void 올림픽개최년도() {
+        int[] years = {1900,1920,1964,1936,2000,2016};
+        for (int year : years) {
+            assertTrue(new Olympic().isSummerOlympicYear(year), year + "년은 올림픽 개최년도입니다");
+        }
+    }
+
 }
