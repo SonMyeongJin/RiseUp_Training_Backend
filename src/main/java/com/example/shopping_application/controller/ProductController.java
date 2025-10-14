@@ -58,4 +58,9 @@ public class ProductController {
         productDto.setId(id);
         return productService.update(productDto);
     }
+// ---------------------------------- 상품 삭제하기(Delete) --------------------------------------
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable Long id) {
+        productService.delete(id);
+    }
 }

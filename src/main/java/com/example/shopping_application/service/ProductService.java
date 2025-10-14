@@ -79,4 +79,8 @@ public class ProductService {
         return updatedProductDto;
 
     }
+//---------------------------------- 상품 삭제하기(Delete) --------------------------------------
+    public void delete(Long id) {
+        listProductRepository.delete(id);
+    }
 }

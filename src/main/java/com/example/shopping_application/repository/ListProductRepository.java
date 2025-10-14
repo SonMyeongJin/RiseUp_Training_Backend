@@ -47,4 +47,10 @@ public class ListProductRepository {
         products.set(indexToModify, product);
         return product;
     }
+// ---------------------------------- 상품 삭제하기(Delete) --------------------------------------
+    public void deleteById(Long id) {
+        Product product = findById(id);
+        products.remove(product);
+    }
+
 }
