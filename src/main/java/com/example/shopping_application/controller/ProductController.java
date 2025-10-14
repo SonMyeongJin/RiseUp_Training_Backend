@@ -4,10 +4,9 @@ import com.example.shopping_application.domain.Product;
 import com.example.shopping_application.dto.ProductDto;
 import com.example.shopping_application.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ProductController {
@@ -20,10 +19,16 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public ProductDto creatProduct(@RequestBody ProductDto productDto) {
+    // 상품을 추가하는 API
+    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    public ProductDto createProduct(@RequestBody ProductDto productDto) {
         // 프로덕트를 생성하고 리스트에 넣는 작업
         return productService.add(productDto);
     }
 
+    // 상품을 id로 조회하는 API
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+    public ProductDto findById(@PathVariable Long id) {
+        return productService.findById(id);
+    }
 }
