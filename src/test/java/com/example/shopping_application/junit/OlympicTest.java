@@ -2,8 +2,7 @@ package com.example.shopping_application.junit;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class OlympicTest {
 
@@ -38,5 +37,15 @@ class OlympicTest {
     @Test
     void 사년주기아니지만개최년도() {
         assertTrue(new Olympic().isSummerOlympicYear(2021), "특별히 2021년은 올림픽 개최년도입니다");
+    }
+
+    @Test
+    void 개최확정안된연도() {
+        // 2032년까지 개최확정
+        assertDoesNotThrow(() -> new Olympic().isSummerOlympicYear(2031));
+        assertDoesNotThrow(() -> new Olympic().isSummerOlympicYear(2032));
+        // 개최확정된 2032년 이후
+        assertThrows(IllegalArgumentException.class, () -> new Olympic().isSummerOlympicYear(2033));
+        assertThrows(IllegalArgumentException.class, () -> new Olympic().isSummerOlympicYear(2054));
     }
 }
