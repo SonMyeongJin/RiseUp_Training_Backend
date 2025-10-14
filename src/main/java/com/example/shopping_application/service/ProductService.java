@@ -21,7 +21,7 @@ public class ProductService {
         this.listProductRepository = listProductRepository;
         this.modelMapper = modelMapper;
     }
-
+//---------------------------------- 상품 등록하기(Register) --------------------------------------
     public ProductDto add(ProductDto productDto) {
         // ProductDto 를 Product 로 변환하는 코드
         Product product = modelMapper.map(productDto, Product.class);
@@ -35,7 +35,7 @@ public class ProductService {
         // 변환된 ProductDto 를 리턴하는 코드
         return savedProductDto;
     }
-
+//---------------------------------- 상품 조회하기(Find) --------------------------------------
     // 이 함수는 controller에서 호출하겠지
     public ProductDto findById(Long id) {
         // 레퍼지토리에서 id로 Product 를 찾는 코드
@@ -64,6 +64,19 @@ public class ProductService {
                 .map(product -> modelMapper.map(product, ProductDto.class))
                 .toList();
         return productDtos;
+
+    }
+//---------------------------------- 상품 수정하기(Edit) --------------------------------------
+    public ProductDto update(ProductDto productDto) {
+        // ProductDto 를 Product 로 변환하는 코드
+        Product product = modelMapper.map(productDto, Product.class);
+
+        // 레포지토리를 호출해서 update 하는 코드
+        Product updatedProduct = listProductRepository.update(product);
+
+        // Product 를 ProductDto 로 변환하는 코드
+        ProductDto updatedProductDto = modelMapper.map(updatedProduct, ProductDto.class);
+        return updatedProductDto;
 
     }
 }

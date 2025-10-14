@@ -19,6 +19,7 @@ public class ProductController {
         this.productService = productService;
     }
 
+    // ---------------------------------- 상품 등록하기(Register) --------------------------------------
     // 상품을 추가하는 API
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public ProductDto createProduct(@RequestBody ProductDto productDto) {
@@ -26,6 +27,7 @@ public class ProductController {
         return productService.add(productDto);
     }
 
+    // ---------------------------------- 상품 조회하기(Find) --------------------------------------
     // 상품을 id로 조회하는 API
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
     public ProductDto findById(@PathVariable Long id) {
@@ -47,6 +49,13 @@ public class ProductController {
         }
 
         return productService.findByNameContaining(name);
+    }
 
+// ---------------------------------- 상품 수정하기(Edit) --------------------------------------
+
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+    public ProductDto updateProduct(@PathVariable Long id, @RequestBody ProductDto productDto) {
+        productDto.setId(id);
+        return productService.update(productDto);
     }
 }

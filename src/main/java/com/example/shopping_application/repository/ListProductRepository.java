@@ -16,6 +16,7 @@ public class ListProductRepository {
     private List<Product> products = new CopyOnWriteArrayList<>();
     private AtomicLong sequence = new AtomicLong(1L);
 
+//---------------------------------- 상품 등록하기(Register) --------------------------------------
     public Product add(Product product) {
 
         product.setId(sequence.getAndAdd(1L));
@@ -23,7 +24,7 @@ public class ListProductRepository {
         products.add(product);
         return product;
     }
-
+//---------------------------------- 상품 조회하기(Find) --------------------------------------
     public Product findById(Long id) {
         return products.stream()
                 .filter(product -> product.sameId(id))
@@ -39,5 +40,11 @@ public class ListProductRepository {
         return products.stream()
                 .filter(product -> product.containsName(name))
                 .toList();
+    }
+//---------------------------------- 상품 수정하기(Edit) --------------------------------------
+    public Product update(Product product) {
+        Integer indexToModify = products.indexOf(product);
+        products.set(indexToModify, product);
+        return product;
     }
 }
