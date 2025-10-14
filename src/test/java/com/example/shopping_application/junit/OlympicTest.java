@@ -33,4 +33,10 @@ class OlympicTest {
             assertFalse(new Olympic().isSummerOlympicYear(year), year + "년은 올림픽 개최년도 아닙니다");
         }
     }
+
+    // Covid19 때문인가..?
+    @Test
+    void 사년주기아니지만개최년도() {
+        assertTrue(new Olympic().isSummerOlympicYear(2021), "특별히 2021년은 올림픽 개최년도입니다");
+    }
 }
