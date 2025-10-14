@@ -37,4 +37,16 @@ public class ProductController {
     public List<ProductDto> findAllProduct() {
         return productService.findAll();
     }
+
+    // 상품 이름으로 검색하는 API
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    public List<ProductDto> findProductByName(@RequestParam(required = false) String name) {
+
+        if (name == null) {
+            return productService.findAll();
+        }
+
+        return productService.findByNameContaining(name);
+
+    }
 }
