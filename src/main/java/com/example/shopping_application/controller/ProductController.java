@@ -20,7 +20,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
     public ProductDto creatProduct(@RequestBody ProductDto productDto) {
         // 프로덕트를 생성하고 리스트에 넣는 작업
         return productService.add(productDto);

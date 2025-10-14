@@ -33,4 +33,13 @@ public class ProductService {
         // 변환된 ProductDto 를 리턴하는 코드
         return savedProductDto;
     }
+
+    // 이 함수는 controller에서 호출하겠지
+    public ProductDto findById(Long id) {
+        // 레퍼지토리에서 id로 Product 를 찾는 코드
+        Product product = listProductRepository.findById(id);
+        // Product 를 ProductDto 로 변환하는 코드
+        ProductDto productDto = modelMapper.map(product, ProductDto.class);
+        return productDto;
+    }
 }

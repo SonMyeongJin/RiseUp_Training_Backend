@@ -11,4 +11,8 @@ public class Product {
     }
 
     // ProdcutDTO 만들었으므로 getter 삭제
+
+    public boolean sameId(Long id) {
+        return this.id.equals(id);
+    }
 }
