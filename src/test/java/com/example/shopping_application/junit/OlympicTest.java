@@ -26,4 +26,11 @@ class OlympicTest {
         }
     }
 
+    @Test
+    void 사년주기이외개최년도() {
+        int[] years = {1905,1907,1925,1937,1999,2015};
+        for (int year : years) {
+            assertFalse(new Olympic().isSummerOlympicYear(year), year + "년은 올림픽 개최년도 아닙니다");
+        }
+    }
 }
