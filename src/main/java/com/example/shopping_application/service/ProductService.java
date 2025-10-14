@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
 
@@ -41,5 +43,16 @@ public class ProductService {
         // Product 를 ProductDto 로 변환하는 코드
         ProductDto productDto = modelMapper.map(product, ProductDto.class);
         return productDto;
+    }
+
+    // 이 함수도 컨트롤러에서 호출할거야
+    public List<ProductDto> findAll() {
+        // 레포지토리에서 모든 Product 를 찾는 코드
+        List<Product> products = listProductRepository.findAll();
+        // List<Product> 를 List<ProductDto> 로 변환하는 코드
+        List<ProductDto> productDtos = products.stream()
+                .map(product -> modelMapper.map(product, ProductDto.class))
+                .toList();
+        return productDtos;
     }
 }

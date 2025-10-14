@@ -31,4 +31,7 @@ public class ListProductRepository {
                 .orElseThrow();
     }
 
+    public List<Product> findAll() {
+        return products;
+    }
 }

@@ -31,4 +31,10 @@ public class ProductController {
     public ProductDto findById(@PathVariable Long id) {
         return productService.findById(id);
     }
+
+    // 전체 상품 목록을 조회하는 API
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
+    public List<ProductDto> findAllProduct() {
+        return productService.findAll();
+    }
 }
