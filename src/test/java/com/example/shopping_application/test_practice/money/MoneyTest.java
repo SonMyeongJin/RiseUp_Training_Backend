@@ -2,8 +2,7 @@ package com.example.shopping_application.test_practice.money;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MoneyTest {
     @Test
@@ -27,5 +26,7 @@ public class MoneyTest {
     public void  testEquality() {
         // 객체가 다르기 때문에 실패 -> 클래스에서 오버라이드 해줘야됨
         assertTrue(new Dollar(5).equals(new Dollar(5)));
+        // 금액이 다르기 때문에 False 여야 하지만 오류나기때문에 equals 함수 리펙토링 해야됨
+        assertFalse(new Dollar(5).equals(new Dollar(10)));
     }
 }
