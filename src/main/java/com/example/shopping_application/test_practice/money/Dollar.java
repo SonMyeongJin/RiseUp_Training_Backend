@@ -14,7 +14,9 @@ public class Dollar {
 
     @Override
     public boolean equals(Object object) {
-        return true;
+        //객체 비교가 아니라 값 비교를 하기 위해 코드 리펙토링
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
     }
 
 }
