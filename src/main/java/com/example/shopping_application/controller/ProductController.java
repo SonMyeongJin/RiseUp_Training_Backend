@@ -34,13 +34,14 @@ public class ProductController {
         return productService.findById(id);
     }
 
-    // 전체 상품 목록을 조회하는 API
+    /* 전체 상품 목록을 조회하는 API
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public List<ProductDto> findAllProduct() {
         return productService.findAll();
-    }
+    }*/
 
     // 상품 이름으로 검색하는 API
+    // 위의 함수와 합침 (이름이 없으면 전체상품 목록 조회)
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public List<ProductDto> findProductByName(@RequestParam(required = false) String name) {
 
