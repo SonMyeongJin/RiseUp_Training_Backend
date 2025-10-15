@@ -3,6 +3,7 @@ package com.example.shopping_application.test_practice.money;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MoneyTest {
     @Test
@@ -20,5 +21,11 @@ public class MoneyTest {
         // 위에 만든 product라는 객체에 five 객체의 amount 5에 3을 곱한 값을 덮어씀
         product = five.times(3);
         assertEquals (15, product.amount);
+    }
+
+    @Test
+    public void  testEquality() {
+        // 객체가 다르기 때문에 실패 -> 클래스에서 오버라이드 해줘야됨
+        assertTrue(new Dollar(5).equals(new Dollar(5)));
     }
 }
