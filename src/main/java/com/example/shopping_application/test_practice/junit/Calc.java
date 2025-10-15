@@ -1,4 +1,4 @@
-package com.example.shopping_application.junit;
+package com.example.shopping_application.test_practice.junit;
 
 public class Calc {
 
