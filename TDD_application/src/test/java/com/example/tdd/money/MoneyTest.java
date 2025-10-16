@@ -12,14 +12,14 @@ public class MoneyTest {
 
         //five라는 객체의 amount=5 에 2를 곱한 값을 새로운 product 라는 객체에 저장
         Dollar product = five.times(2);
-        assertEquals (10, product.amount);
+        assertEquals (new Dollar(10), product);
 
         // 실패
         // expect : 15
         // actual : 30
         // 위에 만든 product라는 객체에 five 객체의 amount 5에 3을 곱한 값을 덮어씀
         product = five.times(3);
-        assertEquals (15, product.amount);
+        assertEquals (new Dollar(15), product);
     }
 
     @Test
