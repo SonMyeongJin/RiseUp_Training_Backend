@@ -10,7 +10,7 @@ public class Franc extends Money {
     }
 
     // 곱셈 메서드 구현
-    Franc times(int multiplier) {
+    Money times(int multiplier) {
         return new Franc(amount * multiplier);
     }
 

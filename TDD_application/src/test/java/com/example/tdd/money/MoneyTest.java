@@ -10,10 +10,10 @@ public class MoneyTest {
     @Test
     public void testMultiplication() {
         // five라는 객에에 amount 5를 넣어 생성
-        Dollar five = new Dollar(5);
+        Money five = Money.dollar(5);
 
         //five라는 객체의 amount=5 에 2를 곱한 값을 새로운 product 라는 객체에 저장
-        Dollar product = five.times(2);
+        Money product = five.times(2);
         assertEquals (new Dollar(10), product);
 
         // 실패
@@ -36,7 +36,7 @@ public class MoneyTest {
         assertFalse(new Franc(5).equals(new Franc(10)));
 
         // 다른 화폐 단위를 비교하고싶어.
-        assertFalse(new Franc(5).equals(new Dollar(5)));
+        assertFalse(Money.dollar(5).equals(Money.franc(5)));
     }
 
     // 프랑스 화폐 곱셈이 되는가?
