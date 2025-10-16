@@ -34,6 +34,9 @@ public class MoneyTest {
 
         assertTrue(new Franc(5).equals(new Franc(5)));
         assertFalse(new Franc(5).equals(new Franc(10)));
+
+        // 다른 화폐 단위를 비교하고싶어.
+        assertFalse(new Franc(5).equals(new Dollar(5)));
     }
 
     // 프랑스 화폐 곱셈이 되는가?

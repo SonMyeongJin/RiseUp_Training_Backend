@@ -2,7 +2,7 @@ package com.example.tdd.money;
 
 public class Franc extends Money {
 
-    private int amount;
+//    private int amount;
 
     // 생성자로 amount 초기화
     Franc(int amount) {
