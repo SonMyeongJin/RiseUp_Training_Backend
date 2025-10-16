@@ -1,6 +1,5 @@
 package com.example.shopping_application.controller;
 
-import com.example.shopping_application.domain.Product;
 import com.example.shopping_application.dto.ProductDto;
 import com.example.shopping_application.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

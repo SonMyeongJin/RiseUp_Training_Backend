@@ -1,0 +1,42 @@
+package com.example.tdd
+// TDD 연습용 모듈용 build.gradle (현재 src 내부에 위치해서 Gradle이 기본적으로 인식하지 못합니다)
+// 권장: 프로젝트 루트에 `TDD_application/` 디렉터리를 만들고 그 안에 이 파일을 옮기고,
+//      소스도 `TDD_application/src/main/java/...` 와 `TDD_application/src/test/java/...` 구조로 재배치하세요.
+
+plugins {
+    id 'java'
+}
+
+group = 'com.example.tdd'
+version = '0.0.1-SNAPSHOT'
+
+// JDK 25를 설치하셨지만 호환성 / 라이브러리 안정성을 위해 TDD 학습은 17로 타겟팅 권장
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    // 선택적: 가독성 좋은 assertion
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    // 선택적: Mocking 필요 시
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+}
+
+test {
+    useJUnitPlatform()
+    // 필요 시 단일 테스트 실행 예: ./gradlew test --tests "com.example.tdd.CalcTest"
+}
+
+// 추가 학습용 태스크 예시 (원하면 주석 해제)
+// tasks.register('quickTest', Test) {
+//     useJUnitPlatform()
+//     include '**/CalcTest.class'
+// }
+

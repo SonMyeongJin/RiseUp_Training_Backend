@@ -1,6 +1,4 @@
-package com.example.shopping_application.test_practice.junit;
-
-import com.example.shopping_application.test_practice.junit.Calc;
+package com.example.junit;
 
 import static org.junit.jupiter.api.Assertions.*;
 

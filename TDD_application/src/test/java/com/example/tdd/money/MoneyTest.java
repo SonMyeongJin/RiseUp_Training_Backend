@@ -1,4 +1,4 @@
-package com.example.shopping_application.test_practice.money;
+package com.example.tdd.money;
 
 import org.junit.jupiter.api.Test;
 

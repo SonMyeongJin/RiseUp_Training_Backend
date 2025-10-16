@@ -1,11 +1,11 @@
 Initialized native services in: /Users/RU1129/.gradle/native
 Initialized jansi services in: /Users/RU1129/.gradle/native
-To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
-Starting process 'Gradle build daemon'. Working directory: /Users/RU1129/.gradle/daemon/8.14.3 Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -cp /Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/gradle-daemon-main-8.14.3.jar -javaagent:/Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/agents/gradle-instrumentation-agent-8.14.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.3
-Successfully started process 'Gradle build daemon'
+To honour the JVM settings for this com.example.shopping_application.build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle com.example.shopping_application.build daemon'. Working directory: /Users/RU1129/.gradle/daemon/8.14.3 Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -cp /Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/gradle-daemon-main-8.14.3.jar -javaagent:/Users/RU1129/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/agents/gradle-instrumentation-agent-8.14.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.3
+Successfully started process 'Gradle com.example.shopping_application.build daemon'
 An attempt to start the daemon took 0.458 secs.
 The client will now receive all logging from the daemon (pid: 48477). The daemon log file: /Users/RU1129/.gradle/daemon/8.14.3/daemon-48477.out.log
-Daemon will be stopped at the end of the build 
+Daemon will be stopped at the end of the com.example.shopping_application.build
 Using 10 worker leases.
 Received JVM installation metadata from '/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home': {JAVA_HOME=/Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home, JAVA_VERSION=21.0.8, JAVA_VENDOR=Microsoft, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21.0.8+9-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21.0.8+9-LTS, VM_VENDOR=Microsoft, OS_ARCH=aarch64}
 Watching the file system is configured to be enabled if available
@@ -13,11 +13,11 @@ Now considering [/Users/RU1129/IdeaProjects/shopping_application] as hierarchies
 File system watching is active
 Starting Build
 Settings evaluated using settings file '/Users/RU1129/IdeaProjects/shopping_application/settings.gradle'.
-Projects loaded. Root project using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Projects loaded. Root project using com.example.shopping_application.build file '/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build.gradle'.
 Included projects: [root project 'shopping_application']
 
 > Configure project :
-Evaluating root project 'shopping_application' using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Evaluating root project 'shopping_application' using com.example.shopping_application.build file '/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build.gradle'.
 Resolved plugin [id: 'java']
 Resolved plugin [id: 'org.springframework.boot', version: '3.5.6']
 Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
@@ -82,9 +82,9 @@ Custom actions are attached to task ':compileJava'.
 Caching disabled for task ':compileJava' because:
   Build cache is disabled
 Task ':compileJava' is not up-to-date because:
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main/com has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main/com/example has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main/com has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main/com/example has been removed.
   and more...
 The input changes require a full rebuild for incremental task ':compileJava'.
 Compilation mode: in-process compilation
@@ -101,9 +101,9 @@ Caching disabled for task ':processResources' because:
   Build cache is disabled
   Not worth caching
 Task ':processResources' is not up-to-date because:
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main has been removed.
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main/application.properties has been removed.
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main/static has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main/application.properties has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main/static has been removed.
   and more...
 Resolve mutations for :classes (Thread[#175,Execution worker,5,main]) started.
 :classes (Thread[#175,Execution worker,5,main]) started.
@@ -118,9 +118,9 @@ Custom actions are attached to task ':compileTestJava'.
 Caching disabled for task ':compileTestJava' because:
   Build cache is disabled
 Task ':compileTestJava' is not up-to-date because:
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test/com has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test/com/example has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test/com has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test/com/example has been removed.
   and more...
 The input changes require a full rebuild for incremental task ':compileTestJava'.
 Compilation mode: in-process compilation
@@ -150,7 +150,7 @@ Caching disabled for task ':test' because:
   Build cache is disabled
 Task ':test' is not up-to-date because:
   Value of input property 'filter.commandLineIncludePatterns' has changed for task ':test'
-Starting process 'Gradle Test Executor 1'. Working directory: /Users/RU1129/IdeaProjects/shopping_application Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java -Dorg.gradle.internal.worker.tmpdir=/Users/RU1129/IdeaProjects/shopping_application/build/tmp/test/work @/Users/RU1129/.gradle/.tmp/gradle-worker-classpath13863425371586184462txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+Starting process 'Gradle Test Executor 1'. Working directory: /Users/RU1129/IdeaProjects/shopping_application Command: /Users/RU1129/Library/Java/JavaVirtualMachines/ms-21.0.8/Contents/Home/bin/java -Dorg.gradle.internal.worker.tmpdir=/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/tmp/test/work @/Users/RU1129/.gradle/.tmp/gradle-worker-classpath13863425371586184462txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
 Successfully started process 'Gradle Test Executor 1'
 
 ShoppingApplicationTests STANDARD_OUT
@@ -171,14 +171,14 @@ ShoppingApplicationTests STANDARD_OUT
     2025-10-10T18:29:56.740+09:00  INFO 48502 --- [shopping_application] [    Test worker] c.e.s.ShoppingApplicationTests           : Started ShoppingApplicationTests in 0.593 seconds (process running for 1.054)
 
 ShoppingApplicationTests > contextLoads() STANDARD_ERROR
-    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your com.example.shopping_application.build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
     WARNING: A Java agent has been loaded dynamically (/Users/RU1129/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.7/fbf3d6d649ed37fc9e9c59480a05be0a26e3c2da/byte-buddy-agent-1.17.7.jar)
     WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
     WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
     WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Finished generating test XML results (0.004 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/test-results/test
+Finished generating test XML results (0.004 secs) into: /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/test-results/test
 Generating HTML test report...
-Finished generating test html results (0.009 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/reports/tests/test
+Finished generating test html results (0.009 secs) into: /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/reports/tests/test
 
 BUILD SUCCESSFUL in 4s
 5 actionable tasks: 5 executed

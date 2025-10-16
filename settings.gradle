@@ -1,1 +1,2 @@
-rootProject.name = 'shopping_application'
+rootProject.name = 'RiseUP_Study'
+include 'shopping_application', 'TDD_application'

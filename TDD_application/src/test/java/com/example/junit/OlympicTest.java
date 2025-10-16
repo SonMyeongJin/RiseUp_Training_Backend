@@ -1,6 +1,5 @@
-package com.example.shopping_application.test_practice.junit;
+package com.example.junit;
 
-import com.example.shopping_application.test_practice.junit.Olympic;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

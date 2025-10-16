@@ -13,18 +13,18 @@ Actual: DefaultDaemonContext[uid=fab8c1e0-3d73-40d3-b539-32785ca3eb29,javaHome=/
 
   Looking for a different daemon...
 The client will now receive all logging from the daemon (pid: 46267). The daemon log file: /Users/RU1129/.gradle/daemon/8.14.3/daemon-46267.out.log
-Starting 5th build in daemon [uptime: 3 mins 6.191 secs, performance: 99%, GC rate: 0.00/s, heap usage: 4% of 512 MiB, non-heap usage: 19% of 384 MiB]
+Starting 5th com.example.shopping_application.build in daemon [uptime: 3 mins 6.191 secs, performance: 99%, GC rate: 0.00/s, heap usage: 4% of 512 MiB, non-heap usage: 19% of 384 MiB]
 Using 10 worker leases.
 Now considering [/Users/RU1129/IdeaProjects/shopping_application] as hierarchies to watch
 Watching the file system is configured to be enabled if available
 File system watching is active
 Starting Build
 Settings evaluated using settings file '/Users/RU1129/IdeaProjects/shopping_application/settings.gradle'.
-Projects loaded. Root project using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Projects loaded. Root project using com.example.shopping_application.build file '/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build.gradle'.
 Included projects: [root project 'shopping_application']
 
 > Configure project :
-Evaluating root project 'shopping_application' using build file '/Users/RU1129/IdeaProjects/shopping_application/build.gradle'.
+Evaluating root project 'shopping_application' using com.example.shopping_application.build file '/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build.gradle'.
 Resolved plugin [id: 'java']
 Resolved plugin [id: 'org.springframework.boot', version: '3.5.6']
 Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
@@ -83,9 +83,9 @@ Custom actions are attached to task ':compileJava'.
 Caching disabled for task ':compileJava' because:
   Build cache is disabled
 Task ':compileJava' is not up-to-date because:
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main/com has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/main/com/example has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main/com has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/main/com/example has been removed.
   and more...
 The input changes require a full rebuild for incremental task ':compileJava'.
 Compilation mode: in-process compilation
@@ -102,9 +102,9 @@ Caching disabled for task ':processResources' because:
   Build cache is disabled
   Not worth caching
 Task ':processResources' is not up-to-date because:
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main has been removed.
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main/application.properties has been removed.
-  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/build/resources/main/static has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main/application.properties has been removed.
+  Output property 'destinationDir' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/resources/main/static has been removed.
   and more...
 Resolve mutations for :classes (Thread[#748,Execution worker Thread 2,5,main]) started.
 :classes (Thread[#748,Execution worker Thread 2,5,main]) started.
@@ -119,9 +119,9 @@ Custom actions are attached to task ':compileTestJava'.
 Caching disabled for task ':compileTestJava' because:
   Build cache is disabled
 Task ':compileTestJava' is not up-to-date because:
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test/com has been removed.
-  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/build/classes/java/test/com/example has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test/com has been removed.
+  Output property 'destinationDirectory' file /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/classes/java/test/com/example has been removed.
   and more...
 The input changes require a full rebuild for incremental task ':compileTestJava'.
 Compilation mode: in-process compilation
@@ -151,7 +151,7 @@ Caching disabled for task ':test' because:
   Build cache is disabled
 Task ':test' is not up-to-date because:
   Task has failed previously.
-Starting process 'Gradle Test Executor 2'. Working directory: /Users/RU1129/IdeaProjects/shopping_application Command: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/bin/java -Dorg.gradle.internal.worker.tmpdir=/Users/RU1129/IdeaProjects/shopping_application/build/tmp/test/work @/Users/RU1129/.gradle/.tmp/gradle-worker-classpath5211869591338580480txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
+Starting process 'Gradle Test Executor 2'. Working directory: /Users/RU1129/IdeaProjects/shopping_application Command: /Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home/bin/java -Dorg.gradle.internal.worker.tmpdir=/Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/tmp/test/work @/Users/RU1129/.gradle/.tmp/gradle-worker-classpath5211869591338580480txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=JP -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
 Successfully started process 'Gradle Test Executor 2'
 
 ShoppingApplicationTests STANDARD_OUT
@@ -172,14 +172,14 @@ ShoppingApplicationTests STANDARD_OUT
     2025-10-10T18:16:17.812+09:00  INFO 46732 --- [shopping_application] [    Test worker] c.e.s.ShoppingApplicationTests           : Started ShoppingApplicationTests in 0.488 seconds (process running for 0.865)
 
 ShoppingApplicationTests > contextLoads() STANDARD_ERROR
-    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your com.example.shopping_application.build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
     WARNING: A Java agent has been loaded dynamically (/Users/RU1129/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.7/fbf3d6d649ed37fc9e9c59480a05be0a26e3c2da/byte-buddy-agent-1.17.7.jar)
     WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
     WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
     WARNING: Dynamic loading of agents will be disallowed by default in a future release
-Finished generating test XML results (0.0 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/test-results/test
+Finished generating test XML results (0.0 secs) into: /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/test-results/test
 Generating HTML test report...
-Finished generating test html results (0.002 secs) into: /Users/RU1129/IdeaProjects/shopping_application/build/reports/tests/test
+Finished generating test html results (0.002 secs) into: /Users/RU1129/IdeaProjects/shopping_application/com.example.shopping_application.build/reports/tests/test
 
 BUILD SUCCESSFUL in 1s
 5 actionable tasks: 5 executed

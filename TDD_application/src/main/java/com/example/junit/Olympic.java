@@ -1,4 +1,4 @@
-package com.example.shopping_application.test_practice.junit;
+package com.example.junit;
 
 public class Olympic {
     /*
