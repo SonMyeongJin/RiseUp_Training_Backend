@@ -2,15 +2,16 @@ package com.example.tdd.money;
 
 public class Dollar extends Money {
 
-    // private int amount;
-    private String currency;
+//    private int amount;
+//    private String currency;
 
-    Dollar(int amount) {
-        this.amount = amount;
-        this.currency = "USD";
+    Dollar(int amount, String currency) {
+//        this.amount = amount;
+//        this.currency = currency;
+        super(amount, currency);
     }
     Money times(int multiplier) {
-        return new Dollar(amount * multiplier);
+        return Money.dollar(amount * multiplier);
     }
 
 
@@ -21,8 +22,8 @@ public class Dollar extends Money {
 //        return amount == money.amount;
 //    }
 
-    String currency() {
-        return currency;
-    }
+//    String currency() {
+//        return currency;
+//    } -> Franc랑 중복이니까 Money로 옮김
 
 }
