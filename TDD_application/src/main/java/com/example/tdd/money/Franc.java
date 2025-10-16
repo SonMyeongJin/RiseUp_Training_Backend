@@ -1,6 +1,6 @@
 package com.example.tdd.money;
 
-public class Franc {
+public class Franc extends Money {
 
     private int amount;
 
@@ -14,10 +14,10 @@ public class Franc {
         return new Franc(amount * multiplier);
     }
 
-    // equals 메서드 오버라이딩
-    @Override
-    public boolean equals(Object object) {
-        Franc franc = (Franc) object;
-        return amount == franc.amount;
-    }
+//    // equals 메서드 오버라이딩
+//    @Override
+//    public boolean equals(Object object) {
+//        Franc franc = (Franc) object;
+//        return amount == franc.amount;
+//    }
 }

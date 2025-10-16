@@ -31,6 +31,9 @@ public class MoneyTest {
         assertTrue(new Dollar(5).equals(new Dollar(5)));
         // 금액이 다르기 때문에 False 여야 하지만 오류나기때문에 equals 함수 리펙토링 해야됨
         assertFalse(new Dollar(5).equals(new Dollar(10)));
+
+        assertTrue(new Franc(5).equals(new Franc(5)));
+        assertFalse(new Franc(5).equals(new Franc(10)));
     }
 
     // 프랑스 화폐 곱셈이 되는가?
