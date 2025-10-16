@@ -3,6 +3,7 @@ package com.example.tdd.money;
 abstract class Money {
     protected int amount;
     abstract Money times(int multiplier);
+    abstract String currency();
 
     @Override
     public boolean equals(Object object) {

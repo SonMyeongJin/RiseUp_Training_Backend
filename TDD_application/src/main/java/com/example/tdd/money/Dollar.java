@@ -3,9 +3,11 @@ package com.example.tdd.money;
 public class Dollar extends Money {
 
     // private int amount;
+    private String currency;
 
     Dollar(int amount) {
         this.amount = amount;
+        this.currency = "USD";
     }
     Money times(int multiplier) {
         return new Dollar(amount * multiplier);
@@ -18,5 +20,9 @@ public class Dollar extends Money {
 //        Money money = (Money) object;
 //        return amount == money.amount;
 //    }
+
+    String currency() {
+        return currency;
+    }
 
 }
