@@ -1,6 +1,6 @@
 package com.example.tdd.money;
 
-abstract class Money {
+class Money {
     protected int amount;
     protected String currency;
 
@@ -9,8 +9,12 @@ abstract class Money {
         this.currency = currency;
     }
 
-    abstract Money times(int multiplier);
+//    abstract Money times(int multiplier);
     //abstract String currency(); -> 중복이니까 추상메소드로 밑에 넘겨주지 말고 여기서 구현하자고
+
+    Money times(int multiplier) {
+        return null;
+    }
     String currency() {
         return currency;
     }
@@ -20,6 +24,10 @@ abstract class Money {
         Money money = (Money) object;
         return amount == money.amount
                 && getClass().equals(money.getClass());
+    }
+
+    public String toString() {
+        return amount + " " + currency;
     }
 
     static Money dollar(int amount) {

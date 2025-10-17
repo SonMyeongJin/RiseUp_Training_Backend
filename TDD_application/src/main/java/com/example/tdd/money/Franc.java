@@ -14,7 +14,8 @@ public class Franc extends Money {
 
     // 곱셈 메서드 구현
     Money times(int multiplier) {
-        return Money.franc(amount * multiplier);
+        return new Money(amount * multiplier, currency) {
+        };
     }
 
 //    // equals 메서드 오버라이딩
