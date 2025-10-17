@@ -10,9 +10,10 @@ public class Dollar extends Money {
 //        this.currency = currency;
         super(amount, currency);
     }
-    Money times(int multiplier) {
-        return new Dollar(amount * multiplier, currency);
-    }
+//     곱셈 메서드 구현        -> Money로 옮김
+//    Money times(int multiplier) {
+//        return new Money(amount * multiplier, currency);
+//    }
 
 
 //    @Override

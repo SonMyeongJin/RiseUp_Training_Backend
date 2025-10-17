@@ -54,4 +54,9 @@ public class MoneyTest {
         assertEquals("CHF", Money.franc(1).currency());
     }
 
+    // 다른 클래스여도 같은 금액이면 같은 돈인가?
+    @Test
+    public void testDifferentClassEquality() {
+        assertTrue(new Money(10,"CHF").equals(new Franc(10,"CHF")));
+    }
 }

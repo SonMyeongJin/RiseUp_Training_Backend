@@ -12,11 +12,11 @@ public class Franc extends Money {
         super(amount, currency);
     }
 
-    // 곱셈 메서드 구현
-    Money times(int multiplier) {
-        return new Money(amount * multiplier, currency) {
-        };
-    }
+//     곱셈 메서드 구현        -> Money로 옮김
+//    Money times(int multiplier) {
+//        return new Money(amount * multiplier, currency) {
+//        };
+//    }
 
 //    // equals 메서드 오버라이딩
 //    @Override

@@ -13,7 +13,7 @@ class Money {
     //abstract String currency(); -> 중복이니까 추상메소드로 밑에 넘겨주지 말고 여기서 구현하자고
 
     Money times(int multiplier) {
-        return null;
+        return new Money(amount * multiplier, currency);
     }
     String currency() {
         return currency;
@@ -23,7 +23,7 @@ class Money {
     public boolean equals(Object object) {
         Money money = (Money) object;
         return amount == money.amount
-                && getClass().equals(money.getClass());
+                && currency.equals(money.currency());
     }
 
     public String toString() {
