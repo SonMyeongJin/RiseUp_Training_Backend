@@ -94,4 +94,13 @@ public class MoneyTest {
         Money result = bank.reduce(Money.dollar(1), "USD");
         assertEquals(Money.dollar(1), result);
     }
+
+    // 2프랑 이랑 1달러랑 같은지 비교하는 테스트
+    @Test
+    public void testReduceDifferentCurrency() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
 }
