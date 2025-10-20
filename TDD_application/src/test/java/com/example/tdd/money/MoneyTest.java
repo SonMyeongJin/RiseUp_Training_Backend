@@ -13,14 +13,14 @@ public class MoneyTest {
         Money five = Money.dollar(5);
 
         //five라는 객체의 amount=5 에 2를 곱한 값을 새로운 product 라는 객체에 저장
-        Money product = five.times(2);
+//        Money product = five.times(2);
 //        assertEquals (new Dollar(10), product);
 
         // 실패
         // expect : 15
         // actual : 30
         // 위에 만든 product라는 객체에 five 객체의 amount 5에 3을 곱한 값을 덮어씀
-        product = five.times(3);
+//        product = five.times(3);
 //        assertEquals (new Dollar(15), product);
     }
 
@@ -113,7 +113,7 @@ public class MoneyTest {
     @Test
     public void testMixedAddition() {
         Expression fiveBucks = Money.dollar(5);
-        Expression tenBucks = Money.franc(10);
+        Expression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
         Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
