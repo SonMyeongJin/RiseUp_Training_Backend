@@ -17,11 +17,13 @@ class Money implements Expression {
     }
 
     Expression plus(Money addend) {
-        return new Sum (this, addend);
+        return new Sum(this, addend);
     }
 
     public Money reduce(String to) {
-        return this;
+//        return this;
+        int rate = (currency.equals("CHF") && to.equals("USD")) ? 2 : 1;
+        return new Money(amount / rate, to);
     }
 
     String currency() {
@@ -40,10 +42,11 @@ class Money implements Expression {
     }
 
     static Money dollar(int amount) {
-        return new Money(amount,"USD");
+        return new Money(amount, "USD");
     }
+
     static Money franc(int amount) {
-        return new Money(amount,"CHF");
+        return new Money(amount, "CHF");
     }
 
 }

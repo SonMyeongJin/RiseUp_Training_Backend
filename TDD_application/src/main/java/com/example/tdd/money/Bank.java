@@ -1,7 +1,7 @@
 package com.example.tdd.money;
 
 public class Bank {
-    Money reduce (Expression source, String to) {
+    Money reduce(Expression source, String to) {
 
         if (source instanceof Money) {
             return ((Money) source).reduce(to);
@@ -12,5 +12,9 @@ public class Bank {
 //        return new Money(amount, to);
 
         return source.reduce(to);
+    }
+
+    void addRate(String from, String to, int rate) {
+
     }
 }
