@@ -59,5 +59,20 @@ class ProductControllerTest {
     }
 
     // 검증실패
+    @DisplayName(" Fail product create - validation error")
+    @Test
+    void createProduct_fail() throws Exception {
+        String body = """
+        {
+          "name": null,
+          "price": null,
+          "amount": null
+        }
+        """;
 
+        mockMvc.perform(post("/products")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body))
+                .andExpect(status().isBadRequest());
+    }
 }
