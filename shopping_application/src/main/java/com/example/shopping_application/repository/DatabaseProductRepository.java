@@ -3,18 +3,33 @@ package com.example.shopping_application.repository;
 import com.example.shopping_application.domain.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Repository
 public class DatabaseProductRepository {
+
+    private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public DatabaseProductRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     //---------------------------------- 상품 등록하기(Register) --------------------------------------
     public Product add(Product product) {
-
-        return null;
+        jdbcTemplate
+                .update("INSERT INTO products(name, price ,amount) VALUES (?, ?, ?)",
+                        product.getName(),
+                        product.getPrice(),
+                        product.getAmount());
+        return product;
     }
 
     //---------------------------------- 상품 조회하기(Find) --------------------------------------
