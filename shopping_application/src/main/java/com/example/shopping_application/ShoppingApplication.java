@@ -26,12 +26,14 @@ public class ShoppingApplication {
         return new ModelMapper();
     }
 
-    @Bean
-    public ApplicationRunner runner(DataSource dataSource) {
-        return args -> {
-
-            Connection connection = dataSource.getConnection();
-            System.out.println("DataSource = " + dataSource);
-        };
-    }
+    // 데이터베이스랑 연결되었는지 확인하는 용도인데 활성화 시키면 테스트가 안됨.
+    // 보통 첫 요청이 들어와야 dataBase를 컨테이너에 빈으로 등록하는데 여기에 이 코드를 선언함으로써 프로젝트 실행하면서 DB 빈을 만들어 놓음.
+//    @Bean
+//    public ApplicationRunner runner(DataSource dataSource) {
+//        return args -> {
+//
+//            Connection connection = dataSource.getConnection();
+//            System.out.println("DataSource = " + dataSource);
+//        };
+//    }
 }

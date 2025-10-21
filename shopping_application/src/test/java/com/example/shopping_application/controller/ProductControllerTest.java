@@ -31,7 +31,7 @@ class ProductControllerTest {
     // 등록 성공
     @DisplayName(" Success product create")
     @Test
-    void createProduct_success() {
+    void createProduct_success() throws Exception {
         ProductDto saved = new ProductDto();
         saved.setId(1L);
         saved.setName("연필");
