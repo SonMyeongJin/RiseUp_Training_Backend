@@ -2,6 +2,7 @@ package com.example.shopping_application.service;
 
 import com.example.shopping_application.domain.Product;
 import com.example.shopping_application.dto.ProductDto;
+import com.example.shopping_application.repository.DatabaseProductRepository;
 import com.example.shopping_application.repository.ListProductRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +13,15 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private ListProductRepository listProductRepository;
+    // private ListProductRepository listProductRepository;
+    private DatabaseProductRepository databaseProductRepository;
     private ModelMapper modelMapper;
     private ValidationService validationService;
 
 
     @Autowired
-    public ProductService(ListProductRepository listProductRepository , ModelMapper modelMapper , ValidationService validationService) {
-        this.listProductRepository = listProductRepository;
+    public ProductService(DatabaseProductRepository databaseProductRepository, ModelMapper modelMapper, ValidationService validationService) {
+        this.databaseProductRepository = databaseProductRepository;
         this.modelMapper = modelMapper;
         this.validationService = validationService;
 
@@ -28,7 +30,8 @@ public class ProductService {
                 .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE);
 
     }
-//---------------------------------- 상품 등록하기(Register) --------------------------------------
+
+    //---------------------------------- 상품 등록하기(Register) --------------------------------------
     public ProductDto add(ProductDto productDto) {
         // ProductDto 를 Product 로 변환하는 코드
         Product product = modelMapper.map(productDto, Product.class);
@@ -37,7 +40,7 @@ public class ProductService {
         validationService.checkValid(product);
 
         // 레포지토리를 호출하는 코드
-        Product savedProduct = listProductRepository.add(product);
+        Product savedProduct = databaseProductRepository.add(product);
 
         // Product 를 ProductDto 로 변환하는 코드
         ProductDto savedProductDto = modelMapper.map(savedProduct, ProductDto.class);
@@ -45,11 +48,12 @@ public class ProductService {
         // 변환된 ProductDto 를 리턴하는 코드
         return savedProductDto;
     }
-//---------------------------------- 상품 조회하기(Find) --------------------------------------
+
+    //---------------------------------- 상품 조회하기(Find) --------------------------------------
     // 이 함수는 controller에서 호출하겠지
     public ProductDto findById(Long id) {
         // 레퍼지토리에서 id로 Product 를 찾는 코드
-        Product product = listProductRepository.findById(id);
+        Product product = databaseProductRepository.findById(id);
         // Product 를 ProductDto 로 변환하는 코드
         ProductDto productDto = modelMapper.map(product, ProductDto.class);
         return productDto;
@@ -58,7 +62,7 @@ public class ProductService {
     // 이 함수도 컨트롤러에서 호출할거야
     public List<ProductDto> findAll() {
         // 레포지토리에서 모든 Product 를 찾는 코드
-        List<Product> products = listProductRepository.findAll();
+        List<Product> products = databaseProductRepository.findAll();
         // List<Product> 를 List<ProductDto> 로 변환하는 코드
         List<ProductDto> productDtos = products.stream()
                 .map(product -> modelMapper.map(product, ProductDto.class))
@@ -68,7 +72,7 @@ public class ProductService {
 
     public List<ProductDto> findByNameContaining(String name) {
         //레포지토리에서 name으로 Product를 찾는 코드
-        List<Product> products = listProductRepository.findByNameContaining(name);
+        List<Product> products = databaseProductRepository.findByNameContaining(name);
         //List<Product> 를 List<ProductDto> 로 변환하는 코드
         List<ProductDto> productDtos = products.stream()
                 .map(product -> modelMapper.map(product, ProductDto.class))
@@ -76,21 +80,23 @@ public class ProductService {
         return productDtos;
 
     }
-//---------------------------------- 상품 수정하기(Edit) --------------------------------------
+
+    //---------------------------------- 상품 수정하기(Edit) --------------------------------------
     public ProductDto update(ProductDto productDto) {
         // ProductDto 를 Product 로 변환하는 코드
         Product product = modelMapper.map(productDto, Product.class);
 
         // 레포지토리를 호출해서 update 하는 코드
-        Product updatedProduct = listProductRepository.update(product);
+        Product updatedProduct = databaseProductRepository.update(product);
 
         // Product 를 ProductDto 로 변환하는 코드
         ProductDto updatedProductDto = modelMapper.map(updatedProduct, ProductDto.class);
         return updatedProductDto;
 
     }
-//---------------------------------- 상품 삭제하기(Delete) --------------------------------------
+
+    //---------------------------------- 상품 삭제하기(Delete) --------------------------------------
     public void delete(Long id) {
-        listProductRepository.delete(id);
+        databaseProductRepository.delete(id);
     }
 }
