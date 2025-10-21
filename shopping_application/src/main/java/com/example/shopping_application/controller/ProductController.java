@@ -2,6 +2,7 @@ package com.example.shopping_application.controller;
 
 import com.example.shopping_application.dto.ProductDto;
 import com.example.shopping_application.service.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class ProductController {
     // ---------------------------------- 상품 등록하기(Register) --------------------------------------
     // 상품을 추가하는 API
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public ProductDto createProduct(@RequestBody ProductDto productDto) {
+    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto) {
         // 프로덕트를 생성하고 리스트에 넣는 작업
         return productService.add(productDto);
     }

@@ -1,10 +1,15 @@
 package com.example.shopping_application.dto;
 
-public class ProductDto {
+import jakarta.validation.constraints.NotNull;
 
+public class ProductDto {
     private Long id;
+
+    @NotNull
     private String name;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer amount;
 
     public void setId(Long id) {

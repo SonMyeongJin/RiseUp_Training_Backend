@@ -14,17 +14,27 @@ public class ProductService {
 
     private ListProductRepository listProductRepository;
     private ModelMapper modelMapper;
+    private ValidationService validationService;
 
 
     @Autowired
-    public ProductService(ListProductRepository listProductRepository , ModelMapper modelMapper) {
+    public ProductService(ListProductRepository listProductRepository , ModelMapper modelMapper , ValidationService validationService) {
         this.listProductRepository = listProductRepository;
         this.modelMapper = modelMapper;
+        this.validationService = validationService;
+
+        modelMapper.getConfiguration()
+                .setFieldMatchingEnabled(true)
+                .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE);
+
     }
 //---------------------------------- 상품 등록하기(Register) --------------------------------------
     public ProductDto add(ProductDto productDto) {
         // ProductDto 를 Product 로 변환하는 코드
         Product product = modelMapper.map(productDto, Product.class);
+
+        // 유효성 검사 코드
+        validationService.checkValid(product);
 
         // 레포지토리를 호출하는 코드
         Product savedProduct = listProductRepository.add(product);
