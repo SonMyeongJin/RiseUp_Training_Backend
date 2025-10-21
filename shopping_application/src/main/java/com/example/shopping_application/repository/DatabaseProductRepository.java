@@ -5,6 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
@@ -15,20 +20,24 @@ import java.util.concurrent.atomic.AtomicLong;
 @Repository
 public class DatabaseProductRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
-    public DatabaseProductRepository(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public DatabaseProductRepository(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
     //---------------------------------- 상품 등록하기(Register) --------------------------------------
     public Product add(Product product) {
-        jdbcTemplate
-                .update("INSERT INTO products(name, price ,amount) VALUES (?, ?, ?)",
-                        product.getName(),
-                        product.getPrice(),
-                        product.getAmount());
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        SqlParameterSource namedParameter = new BeanPropertySqlParameterSource(product);
+
+        namedParameterJdbcTemplate
+                .update("INSERT INTO products(name, price ,amount) VALUES (:name, :price, :amount)", namedParameter, keyHolder);
+
+        Long generatedID = keyHolder.getKey().longValue();
+        product.setId(generatedID);
+
         return product;
     }
 
