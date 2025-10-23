@@ -10,7 +10,7 @@
 <!--    Timestamp update_time;-->
 <!--    int del_flg;-->
 <!--    -->
-    <resultMap id="makerResult" type="com.example.flyway_mybatis.model.Maker">
+    <resultMap id="makerResult" type="com.example.flyway_mybatis.domain.maker">
         <result column="maker_id" property="maker_id"/>
         <result column="name" property="name"/>
         <result column="create_time" property="create_time"/>

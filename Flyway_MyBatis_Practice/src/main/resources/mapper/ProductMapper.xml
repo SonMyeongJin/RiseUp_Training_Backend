@@ -9,7 +9,7 @@
 <!--    String name_kana;-->
 <!--    int maker_id;-->
 <!--    int price01;-->
-    <resultMap id="productsResult" type="com.example.flyway_mybatis.model.Products">
+    <resultMap id="productsResult" type="com.example.flyway_mybatis.domain.products">
         <result column="products_id" property="products_id"/>
         <result column="name" property="name"/>
         <result column="name_kana" property="name_kana"/>
