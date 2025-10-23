@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.flyway_mybatis.mapper.productsMapper">
+
+<!--    int products_id;-->
+<!--    String name;-->
+<!--    String name_kana;-->
+<!--    int maker_id;-->
+<!--    int price01;-->
+    <resultMap id="productsResult" type="com.example.flyway_mybatis.model.Products">
+        <result column="products_id" property="products_id"/>
+        <result column="name" property="name"/>
+        <result column="name_kana" property="name_kana"/>
+        <result column="maker_id" property="maker_id"/>
+        <result column="price01" property="price01"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.flyway_mybatis.mapper.makerMapper">
+
+<!--    int maker_id;-->
+<!--    String name;-->
+<!--    Timestamp create_time;-->
+<!--    Timestamp update_time;-->
+<!--    int del_flg;-->
+<!--    -->
+    <resultMap id="makerResult" type="com.example.flyway_mybatis.model.Maker">
+        <result column="maker_id" property="maker_id"/>
+        <result column="name" property="name"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+        <result column="del_flg" property="del_flg"/>
+    </resultMap>
+
+</mapper>
