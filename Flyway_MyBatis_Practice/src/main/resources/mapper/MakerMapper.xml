@@ -18,4 +18,8 @@
         <result column="del_flg" property="del_flg"/>
     </resultMap>
 
+    <select id="selectFlg0">
+        SELECT * FROM dtb_maker where del_flg = 0
+    </select>
+
 </mapper>

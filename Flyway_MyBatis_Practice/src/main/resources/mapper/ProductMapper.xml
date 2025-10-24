@@ -17,4 +17,8 @@
         <result column="price01" property="price01"/>
     </resultMap>
 
+    <select id="selectStatus1">
+        SELECT * FROM dtb_products where status = 1
+    </select>
+
 </mapper>
