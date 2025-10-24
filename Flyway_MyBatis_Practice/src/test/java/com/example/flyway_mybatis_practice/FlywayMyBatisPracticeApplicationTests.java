@@ -4,6 +4,7 @@ package com.example.flyway_mybatis_practice;
 import com.example.flyway_mybatis_practice.mapper.ItemMapper;
 import com.example.flyway_mybatis_practice.mapper.OrderMapper;
 import com.example.flyway_mybatis_practice.mapper.productsMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,17 @@ class FlywayMybatisApplicationTests {
         Long id = 1002L;
         int affected = productsMapper.updateStatus2ById(id);
         System.out.println("압데이트 = " + affected);
+    }
+
+    @BeforeEach
+    void setupOrders() {
+        // (필요시) 기존 데이터 정리
+        // orderMapper.deleteAllOrderItems();
+        // orderMapper.deleteAllOrders();
+
+        // 부모 주문 생성 (이미 있으면 예외 처리 혹은 무시 로직 필요)
+        orderMapper.addOrder(1, "myeong jin", 10, 2000);
+        orderMapper.addOrder(2, "Hirayama", 5, 1500);
     }
 
     @Autowired
