@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -10,15 +10,24 @@
 <!--    int maker_id;-->
 <!--    int price01;-->
     <resultMap id="productsResult" type="com.example.flyway_mybatis.domain.products">
-        <result column="products_id" property="products_id"/>
+        <result column="product_id" property="product_id"/>
         <result column="name" property="name"/>
         <result column="name_kana" property="name_kana"/>
         <result column="maker_id" property="maker_id"/>
+        <result column="status" property="status"/>
         <result column="price01" property="price01"/>
     </resultMap>
 
-    <select id="selectStatus1">
-        SELECT * FROM dtb_products where status = 1
+    <select id="selectStatus1" resultMap="productsResult">
+        SELECT product_id, name, name_kana, maker_id, status, price01
+        FROM dtb_products
+        WHERE status = 1
     </select>
+
+    <update id="updateStatus2ById">
+        UPDATE dtb_products
+        SET status = 2
+        WHERE product_id = #{productId}
+    </update>
 
 </mapper>
