@@ -5,6 +5,16 @@ public class Orders {
     int customer_id;
     int total_price;
     int total_amount;
+    int orders_date;
+
+    public int getOrders_date() {
+        return orders_date;
+    }
+
+    public void setOrders_date(int orders_date) {
+        this.orders_date = orders_date;
+    }
+
 
     public int getOrders_id() {
         return orders_id;
