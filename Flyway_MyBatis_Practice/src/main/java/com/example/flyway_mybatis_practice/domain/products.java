@@ -6,6 +6,8 @@ public class products {
     private String name_kana;
     private int maker_id;
     private int price01;
+    int status;
+    String makerName;
 
     public int getProducts_id() {
         return products_id;
@@ -45,5 +47,21 @@ public class products {
 
     public void setPrice01(int price01) {
         this.price01 = price01;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMakerName() {
+        return makerName;
+    }
+
+    public void setMakerName(String makerName) {
+        this.makerName = makerName;
     }
 }
