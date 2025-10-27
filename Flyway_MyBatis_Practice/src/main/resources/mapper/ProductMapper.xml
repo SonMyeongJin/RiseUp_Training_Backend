@@ -16,12 +16,24 @@
         <result column="maker_id" property="maker_id"/>
         <result column="status" property="status"/>
         <result column="price01" property="price01"/>
+        <result column="maker_name" property="maker_name"/> <!-- dtb_maker의 name -->
     </resultMap>
 
     <select id="selectStatus1" resultMap="productsResult">
-        SELECT product_id, name, name_kana, maker_id, status, price01
+        <!--SELECT product_id, name, name_kana, maker_id, status, price01
         FROM dtb_products
-        WHERE status = 1
+        WHERE status = 1-->
+
+        SELECT
+        p.product_id,
+        p.name,
+        p.status,
+        p.price01,
+        m.name AS maker_name<!-- dtb_makre의 name -->
+        FROM dtb_products p
+        LEFT JOIN dtb_maker m ON p.maker_id = m.maker_id
+        WHERE p.status = 2
+        AND p.maker_id = #{makerId}
     </select>
 
     <update id="updateStatus2ById">

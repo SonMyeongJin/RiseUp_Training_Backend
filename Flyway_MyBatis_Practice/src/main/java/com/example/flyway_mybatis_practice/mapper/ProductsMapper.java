@@ -9,7 +9,8 @@ import java.util.List;
 @Mapper
 public interface ProductsMapper {
 
-    List<Products> selectStatus1();
+    //  List<Products> selectStatus1();
+    List<Products> selectStatus1(@Param("makerId") Long makerId);
 
     // product_id 기준 status=2 업데이트.
     int updateStatus2ById(@Param("productId") Long productId);
