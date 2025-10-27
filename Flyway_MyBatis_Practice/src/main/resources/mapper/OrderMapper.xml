@@ -9,11 +9,18 @@
         <result column="customer_name" property="customer_name"/>
         <result column="total_amount" property="total_amount"/>
         <result column="total_price" property="total_price"/>
+        <result column="orders_date" property="orders_date"/>
     </resultMap>
 
     <insert id="addOrder">
         INSERT INTO orders (orders_id ,customer_name, total_amount, total_price)
         VALUES (#{orders_id}, #{customer_name}, #{total_amount}, #{total_price})
     </insert>
+
+    <select id="selectOrderByDate">
+        SELECT customer_name, total_amount
+        FROM orders
+        WHERE DATE(orders_date) = #{orders_date}
+    </select>
 
 </mapper>
