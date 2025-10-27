@@ -23,4 +23,11 @@
         WHERE DATE(orders_date) = #{orders_date}
     </select>
 
+    <select id="selectOrderByItemId" parameterType="int">
+        SELECT o.total_price, o.total_amount
+        FROM orders o
+                 JOIN order_item oi ON o.orders_id = oi.orders_id
+        WHERE oi.order_item_id = #{order_item_id}
+    </select>
+
 </mapper>

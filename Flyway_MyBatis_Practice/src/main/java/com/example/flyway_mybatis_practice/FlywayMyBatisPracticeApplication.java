@@ -27,6 +27,10 @@ public class FlywayMyBatisPracticeApplication {
 
             System.out.println("===== selectOrderByDate( orders_date = 20250527 ) =====");
             var orders = orderMapper.selectOrderByDate(20250527);
+
+            System.out.println("===== selectOrderByItemId( order_item_id = 1 ) =====");
+            var orderByItem = orderMapper.selectOrderByItemId(1);
+
         };
     }
 }

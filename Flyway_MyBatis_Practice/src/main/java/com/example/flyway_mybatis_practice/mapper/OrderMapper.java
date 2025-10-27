@@ -19,4 +19,8 @@ public interface OrderMapper {
             @Param("orders_date") int orders_date
     );
 
+    List<Orders> selectOrderByItemId(
+            @Param("order_item_id") int order_item_id
+    );
+
 }
