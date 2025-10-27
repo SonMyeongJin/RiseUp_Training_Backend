@@ -1,6 +1,6 @@
 package com.example.flyway_mybatis_practice.domain;
 
-public class products {
+public class Products {
     private int products_id;
     private String name;
     private String name_kana;

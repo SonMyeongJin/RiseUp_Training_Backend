@@ -3,7 +3,7 @@ package com.example.flyway_mybatis_practice;
 
 import com.example.flyway_mybatis_practice.mapper.ItemMapper;
 import com.example.flyway_mybatis_practice.mapper.OrderMapper;
-import com.example.flyway_mybatis_practice.mapper.productsMapper;
+import com.example.flyway_mybatis_practice.mapper.ProductsMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class FlywayMybatisApplicationTests {
 
     @Autowired
-    productsMapper productsMapper;
+    ProductsMapper productsMapper;
 
     @Test
     void updateStatus2ById() {

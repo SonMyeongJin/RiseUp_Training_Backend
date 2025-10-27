@@ -2,7 +2,7 @@ package com.example.flyway_mybatis_practice.domain;
 
 import java.sql.Timestamp;
 
-public class maker {
+public class Maker {
     private int maker_id;
     private String name;
     private java.sql.Timestamp create_date;
