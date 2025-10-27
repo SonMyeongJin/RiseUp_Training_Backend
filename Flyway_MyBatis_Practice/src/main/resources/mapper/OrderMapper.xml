@@ -18,7 +18,7 @@
     </insert>
 
     <select id="selectOrderByDate">
-        SELECT customer_name, total_amount
+        SELECT customer_name, total_price,total_amount
         FROM orders
         WHERE DATE(orders_date) = #{orders_date}
     </select>
