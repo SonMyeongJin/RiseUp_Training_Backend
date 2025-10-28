@@ -23,4 +23,8 @@ public interface OrderMapper {
             @Param("order_item_id") int order_item_id
     );
 
+    List<Orders> selectOrderByPrice(
+            @Param("total_price") int total_price
+    );
+
 }

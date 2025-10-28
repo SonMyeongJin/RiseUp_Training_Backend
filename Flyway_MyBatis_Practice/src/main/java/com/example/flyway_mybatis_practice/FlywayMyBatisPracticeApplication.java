@@ -31,6 +31,9 @@ public class FlywayMyBatisPracticeApplication {
             System.out.println("===== selectOrderByItemId( order_item_id = 1 ) =====");
             var orderByItem = orderMapper.selectOrderByItemId(1);
 
+            System.out.println("==== selectOrderByPrice( total_price = 2000 ) =====");
+            var orderByPrice = orderMapper.selectOrderByPrice(2000);
+
         };
     }
 }
