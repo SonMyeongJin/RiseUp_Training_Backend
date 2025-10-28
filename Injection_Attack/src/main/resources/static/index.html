@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>로그인</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <style>
         body {
             font-family: system-ui, sans-serif;
@@ -11,25 +11,29 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             max-width: 360px;
             margin: 80px auto;
             background: #fff;
             padding: 32px 28px 28px;
             border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(0,0,0,.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
         }
+
         h1 {
             font-size: 20px;
             margin: 0 0 24px;
             text-align: center;
         }
+
         label {
             display: block;
             font-size: 13px;
             margin-bottom: 6px;
             font-weight: 600;
         }
+
         input[type="text"],
         input[type="password"] {
             width: 100%;
@@ -42,16 +46,20 @@
             outline: none;
             transition: border-color .15s;
         }
+
         input[type="text"]:focus,
         input[type="password"]:focus {
             border-color: #3d6af2;
         }
+
         .field {
             margin-bottom: 18px;
         }
+
         .actions {
             margin-top: 8px;
         }
+
         button {
             width: 100%;
             padding: 12px 14px;
@@ -64,15 +72,18 @@
             cursor: pointer;
             transition: background .15s;
         }
+
         button:hover {
             background: #2f56c4;
         }
+
         .helper {
             font-size: 12px;
             color: #666;
             margin-top: 12px;
             text-align: center;
         }
+
         .error {
             display: none;
             margin-top: 12px;
@@ -92,12 +103,12 @@
         <div class="field">
             <label for="username">아이디</label>
             <input id="username" name="username" type="text" required minlength="3" maxlength="32"
-                   placeholder="아이디를 입력하세요" />
+                   placeholder="아이디를 입력하세요"/>
         </div>
         <div class="field">
             <label for="password">비밀번호</label>
             <input id="password" name="password" type="password" required minlength="6" maxlength="64"
-                   placeholder="비밀번호를 입력하세요" autocomplete="new-password" />
+                   placeholder="비밀번호를 입력하세요" autocomplete="new-password"/>
         </div>
         <div class="actions">
             <button type="submit">로그인</button>
@@ -107,11 +118,11 @@
     </form>
 </div>
 <script>
-    (function() {
+    (function () {
         const form = document.getElementById('loginForm');
         const errorMsg = document.getElementById('errorMsg');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             errorMsg.style.display = 'none';
 
             const user = form.username.value.trim();
@@ -123,6 +134,26 @@
             }
         });
     })();
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const user = form.username.value.trim();
+        const pass = form.password.value;
+        if (user.length < 3 || pass.length < 6) {
+            errorMsg.style.display = 'block';
+            return;
+        }
+        const res = await fetch('/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({username: user, password: pass})
+        });
+        if (!res.ok) {
+            errorMsg.style.display = 'block';
+            return;
+        }
+        const data = await res.json();
+        console.log('saved', data);
+    });
 </script>
 </body>
 </html>
