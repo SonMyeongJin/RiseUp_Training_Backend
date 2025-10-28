@@ -36,4 +36,17 @@
         WHERE total_price > #{total_price}
     </select>
 
+    <!-- 주문 날짜: 해당 orders_id 가 order_item 행 수 >= minItems 인 날짜 반환 -->
+    <select id="getOrdersDateMinItems" parameterType="int" resultType="int">
+        SELECT o.orders_date
+        FROM orders o
+        WHERE o.orders_id IN (
+            SELECT oi.orders_id
+            FROM order_item oi
+            GROUP BY oi.orders_id
+            HAVING COUNT(*) &gt;= #{minItems}
+        )
+        ORDER BY o.orders_date
+    </select>
+
 </mapper>

@@ -27,4 +27,7 @@ public interface OrderMapper {
             @Param("total_price") int total_price
     );
 
+    List<Orders> getOrdersDateMinItems(
+            @Param("minItems") int minItems
+    );
 }
