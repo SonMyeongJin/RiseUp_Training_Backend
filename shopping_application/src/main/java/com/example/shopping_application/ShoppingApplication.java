@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class ShoppingApplication {
 
     public static void main(String[] args) {
