@@ -30,4 +30,8 @@ public interface OrderMapper {
     List<Orders> getOrdersDateMinItems(
             @Param("minItems") int minItems
     );
+
+    List<Orders> testSqlInjection(
+            @Param("customer_name") String input
+    );
 }

@@ -36,6 +36,14 @@ public class FlywayMyBatisPracticeApplication {
 
             System.out.println("==== getOrdersDateMinItems( minItems = 3 ) =====");
             var ordersMinItems = orderMapper.getOrdersDateMinItems(3);
+
+            // 정상방법
+            System.out.println("==== testSqlInjection( input = 'Mong Jin son' ) =====");
+            var sqlInjectionTest2 = orderMapper.testSqlInjection("Mong Jin son");
+            // SQL Injection Attack 시도
+            System.out.println("==== testSqlInjection( input = '1 OR 1=1' ) =====");
+            var sqlInjectionTest = orderMapper.testSqlInjection("abc' OR '1'='1");
+
         };
     }
 }
