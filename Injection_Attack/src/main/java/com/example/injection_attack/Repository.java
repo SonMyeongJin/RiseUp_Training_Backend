@@ -17,5 +17,10 @@ public class Repository {
         // jdbcTemplate 사용해서 sql 문으로 저장
         jdbcTemplate.update("INSERT INTO users (username, password) VALUES (?, ?)", username, password);
         return new User(username, password);
+
+
+        // mybatis 사용 했을때 injection attack 예시
+        // select <
+
     }
 }
