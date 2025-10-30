@@ -18,7 +18,7 @@
         FROM レビュー.レビュー画像
         WHERE レビュー識別番号 = #{reviewId}
           AND 公開状態 = '公開'
-        ORDER BY 表示順 ASC, 登録日時 ASC
+        ORDER BY 登録日時 DESC
     </select>
 </mapper>
 

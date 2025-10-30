@@ -25,7 +25,7 @@
         FROM レビュー.レビュー
         WHERE 商品識別番号 = #{itemId}
           AND 公開状態 = '公開'
-        ORDER BY 登録日時 DESC
+        ORDER BY レーティング DESC, 登録日時 DESC
     </select>
 </mapper>
 
