@@ -8,5 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface ReviewMapper { // 기존 class -> interface 변경
-    List<Review> findPublishedReviewsByItemId(@Param("itemId") String item_id);
+    // 특정 상품의 공개 리뷰 목록 조회
+    List<Review> findPublishedReviewsByItemId(@Param("itemId") String itemId);
 }
