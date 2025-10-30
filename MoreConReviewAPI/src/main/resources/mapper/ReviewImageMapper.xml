@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.moreconreviewapi.mapper.ReviewImageMapper">
+    <!-- ReviewImage 필드와 테이블 컬럼 매핑 -->
+    <resultMap id="ReviewImageResultMap" type="com.example.moreconreviewapi.domain.ReviewImage">
+        <result property="review_image_id" column="レビュー画像識別番号"/>
+        <result property="review_id" column="レビュー識別番号"/>
+        <result property="image_url" column="画像url"/>
+        <result property="display_order" column="表示順"/>
+        <result property="published" column="公開状態"/>
+        <result property="create_date" column="登録日時"/>
+        <result property="update_date" column="更新日時"/>
+    </resultMap>
+
+    <!-- 특정 리뷰의 공개 이미지 목록 (表示順 ASC) -->
+    <select id="findPublishedImagesByReviewId" parameterType="string" resultMap="ReviewImageResultMap">
+        SELECT *
+        FROM レビュー.レビュー画像
+        WHERE レビュー識別番号 = #{reviewId}
+          AND 公開状態 = '公開'
+        ORDER BY 表示順 ASC, 登録日時 ASC
+    </select>
+</mapper>
+
