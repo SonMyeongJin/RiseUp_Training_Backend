@@ -2,7 +2,7 @@ package com.example.moreconreviewapi.domain;
 
 import java.sql.Timestamp;
 
-public class Reivew {
+public class Review {
     /*
     レビュー識別番号          VARCHAR(36) PRIMARY KEY,
     会員識別番号        VARCHAR(36) NOT NULL,
