@@ -19,7 +19,7 @@ public class ReviewRepository {
         this.reviewImageMapper = reviewImageMapper;
     }
 
-    public List<Review> findPublishedReviewsByItemId(String itemId) {
+    public List<Review> findPublishedReviewsByItemId(@RequestParam("itemId") String itemId) {
         return reviewMapper.findPublishedReviewsByItemId(itemId);
     }
 

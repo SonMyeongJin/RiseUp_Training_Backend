@@ -12,17 +12,15 @@ import java.util.List;
 
 @Service
 public class ReviewService {
-    private final ReviewMapper reviewMapper;
     private final ReviewRepository reviewRepository;
 
-    public ReviewService(ReviewMapper reviewMapper, ReviewImageMapper reviewImageMapper, ReviewRepository reviewRepository) {
-        this.reviewMapper = reviewMapper;
+    public ReviewService(ReviewRepository reviewRepository) {
         this.reviewRepository = reviewRepository;
     }
 
     // 특정 상품 ID의 공개 리뷰 목록 반환
-    public List<Review> getPublishedReviewsByItemId(String itemId) {
-        return reviewMapper.findPublishedReviewsByItemId(itemId);
+    public List<Review> getPublishedReviewsByItemId(@RequestParam("itemId") String itemId) {
+        return reviewRepository.findPublishedReviewsByItemId(itemId);
     }
 
     public List<ReviewImage> getReviewImageSV(@RequestParam("reviewId") String reviewId) {
