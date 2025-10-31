@@ -1,8 +1,7 @@
 package com.example.moreconreviewapi.controller;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import com.example.moreconreviewapi.service.ReviewService;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,39 +17,43 @@ class ReviewControllerTest {
     @Autowired
     MockMvc mockMvc;
 
-        //        ＠BeforeEach
-
-        //        // 가짜 리뷰데이터 준비
-        //        // 偽のレビューデータを準備
-
-        // @AfterEach
-        // // 가짜 리뷰데이터 정리
-        // // 偽のレビューデータを整理
     @Test
     @DisplayName("GET /reviews - 成功時にレビューリストをJSONに返す")
     void getReviewsTest() throws Exception {
+        String itemId = "item-1001";
 
-        // 리뷰 서비스를 호출했는지
-        // レビューサービスを呼び出したのか
-
-        // 성공시 리뷰 목록을 JSON으로 반환했는지
-        // 成功時にレビューリストをJSONに返却したか
-
+        mockMvc.perform(get("/reviews")
+                        .param("itemId", itemId))
+                .andExpect(status().isOk())
+                .andExpect(result -> {
+                    // JSON 배열인지(빈 배열 가능)
+                    Assertions.assertTrue(result.getResponse().getContentAsString().startsWith("["));
+                });
     }
 
-      // 아무것도 없는 값을 반환할때
-        // [] 를 반환하는지
+    @Test
+    @DisplayName("GET /review - 何もないとき[]を返す")
+    void getReviewsTest2() throws Exception {
+        mockMvc.perform(get("/review")
+                        .param("itemId", "nonexistentItemId"))
+                .andExpect(status().isOk())
+                .andExpect(result -> Assertions.assertEquals("[]", result.getResponse().getContentAsString()));
+    }
 
     @Test
     @DisplayName("GET /image - 成功時にレビュー画像リストをJSONに返す")
     void getReviewImageTest() throws Exception {
+        String reviewId = "rev-1001";
 
-        // 리뷰 서비스의 getReviewImageSV 함수를 호출했는지
-        // レビューサービスのgetReview ImageSV関数を呼び出したのか
+        mockMvc.perform(get("/image")
+                        .param("reviewId", reviewId))
+                .andExpect(status().isOk())
+                .andExpect(result ->
+                        Assertions.assertTrue(result.getResponse()
+                                .getContentAsString()
+                                .startsWith("[")) // 빈 배열도 허용
+                );
 
-        // 성공시 리뷰 이미지 목록을 JSON으로 반환했는지
-        // 成功時にレビュー画像リストをJSONに返却したか
     }
-
 }
 
