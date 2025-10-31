@@ -1,5 +1,6 @@
 package com.example.moreconreviewapi.controller;
 
+import com.example.moreconreviewapi.domain.NewReview;
 import com.example.moreconreviewapi.domain.Review;
 import com.example.moreconreviewapi.domain.ReviewImage;
 import com.example.moreconreviewapi.service.ReviewService;
@@ -27,5 +28,15 @@ public class ReviewController {
         return reviewService.getReviewImageSV(reviewId);
     }
 
+    // 위에 두개 합쳐서 한번에 리뷰결과를 가져온다
+    // 上の二つを合わせて一度にレビュー結果をもたらす
+    @GetMapping("/review")
+    public List<NewReview> getReview(@RequestParam("itemId") String itemId) {
+
+        reviewService.getReviewImageSV(itemId);
+        reviewService.getPublishedReviewsByItemId(itemId);
+
+        return null;
+    }
 }
 
