@@ -1,5 +1,6 @@
 package com.example.moreconreviewapi.repository;
 
+import com.example.moreconreviewapi.domain.NewReview;
 import com.example.moreconreviewapi.domain.Review;
 import com.example.moreconreviewapi.domain.ReviewImage;
 import com.example.moreconreviewapi.mapper.ReviewImageMapper;
@@ -25,5 +26,9 @@ public class ReviewRepository {
 
     public List<ReviewImage> getReviewImage(@RequestParam("reviewId") String reviewId) {
         return reviewImageMapper.findPublishedImagesByReviewId(reviewId);
+    }
+
+    public List<NewReview> getNewReviewsByItemId(@RequestParam("itemId") String itemId) {
+        return reviewMapper.findNewReviewsByItemId(itemId);
     }
 }
