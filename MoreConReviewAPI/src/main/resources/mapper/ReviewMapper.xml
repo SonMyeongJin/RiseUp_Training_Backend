@@ -38,23 +38,26 @@
         1. 複数あれば複数取得。レビュー画像テーブルの表示順の照準になっていること
     7. レビューの登録日時
     -->
-    <select id="findAllReviewsByItemId" parameterType="string" resultMap="ReviewResultMap">
+    <select id="findNewReviewsByItemId" parameterType="string" resultType="com.example.moreconreviewapi.domain.NewReview">
         SELECT
-            -- column           -- TABLE
-            会員識別番号,         -- Reviewer
-            レビュワー名,         -- Reviewer
-            プロフィール画像URL,    -- Reviewer
-            レーティング,         -- Review
-            レビュー内容,         -- Review
-            画像URL,            -- Review Image
-            登録日時             -- Review
+            review.レビュー識別番号 AS review_id,
+            reviewer.会員識別番号 AS reviewer_id,
+            reviewer.レビュワー名 AS reviewer_name,
+            reviewer.プロフィール画像URL AS reviewer_profile_image_url,
+            review.レーティング AS rating,
+            review.レビュー内容 AS review_content,
+            review_image.画像URL AS review_image_url,
+            review.登録日時 AS review_create_date
         FROM レビュー.レビュー review
-        JOIN レビュー.レビュワー reviewer
-            ON review.会員識別番号 = reviewer.会員識別番号
-        JOIN レビュー.レビュー画像 review_image
-            ON review.レビュー識別番号 = review_image.レビュー識別番号
+            JOIN レビュー.レビュワー reviewer
+                ON reviewer.会員識別番号 = review.会員識別番号
+            LEFT JOIN レビュー.レビュー画像 review_image
+                ON review_image.レビュー識別番号 = review.レビュー識別番号
         WHERE review.商品識別番号 = #{itemId}
-        ORDER BY review.レーティング DESC, review.登録日時 DESC
+            AND review.公開状態 = '公開'
+        ORDER BY review.レーティング DESC,
+                 review.登録日時 DESC,
+                 review_image.表示順 ASC
     </select>
 
 </mapper>

@@ -29,6 +29,6 @@ public class ReviewService {
     }
 
     public List<NewReview> getNewReviewsByItemId(@RequestParam("itemId") String itemId) {
-        return null;
+        return reviewRepository.getNewReviewsByItemId(itemId);
     }
 }

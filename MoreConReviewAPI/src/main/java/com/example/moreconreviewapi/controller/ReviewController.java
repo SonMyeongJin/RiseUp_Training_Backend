@@ -32,11 +32,7 @@ public class ReviewController {
     // 上の二つを合わせて一度にレビュー結果をもたらす
     @GetMapping("/review")
     public List<NewReview> getReview(@RequestParam("itemId") String itemId) {
-
-        reviewService.getReviewImageSV(itemId);
-        reviewService.getPublishedReviewsByItemId(itemId);
-
-        return null;
+        return reviewService.getNewReviewsByItemId(itemId);
     }
 }
 

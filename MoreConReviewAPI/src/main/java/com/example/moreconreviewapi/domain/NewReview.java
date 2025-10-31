@@ -12,6 +12,7 @@ public class NewReview {
     7. レビューの登録日時
     */
     private String review_id;
+    private String reviewer_id;
     private String reviewer_name;
     private String reviewer_profile_image_url; //Reviewer - profile_url
     private int rating;
@@ -25,6 +26,14 @@ public class NewReview {
 
     public void setReview_id(String review_id) {
         this.review_id = review_id;
+    }
+
+    public String getReviewer_id() {
+        return reviewer_id;
+    }
+
+    public void setReviewer_id(String reviewer_id) {
+        this.reviewer_id = reviewer_id;
     }
 
     public String getReviewer_name() {
