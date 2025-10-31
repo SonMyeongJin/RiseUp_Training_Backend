@@ -27,5 +27,35 @@
           AND 公開状態 = '公開'
         ORDER BY レーティング DESC, 登録日時 DESC
     </select>
+
+    <!--
+    1. 会員識別番号
+    2. レビュワー名
+    3. レビュワープロフィール画像URL
+    4. レーティング
+    5. レビュー内容
+    6. 画像URL
+        1. 複数あれば複数取得。レビュー画像テーブルの表示順の照準になっていること
+    7. レビューの登録日時
+    -->
+    <select id="findAllReviewsByItemId" parameterType="string" resultMap="ReviewResultMap">
+        SELECT
+            -- column           -- TABLE
+            会員識別番号,         -- Reviewer
+            レビュワー名,         -- Reviewer
+            プロフィール画像URL,    -- Reviewer
+            レーティング,         -- Review
+            レビュー内容,         -- Review
+            画像URL,            -- Review Image
+            登録日時             -- Review
+        FROM レビュー.レビュー review
+        JOIN レビュー.レビュワー reviewer
+            ON review.会員識別番号 = reviewer.会員識別番号
+        JOIN レビュー.レビュー画像 review_image
+            ON review.レビュー識別番号 = review_image.レビュー識別番号
+        WHERE review.商品識別番号 = #{itemId}
+        ORDER BY review.レーティング DESC, review.登録日時 DESC
+    </select>
+
 </mapper>
 
